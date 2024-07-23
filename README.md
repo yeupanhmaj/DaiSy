@@ -1,0 +1,2 @@
+# DaiSy
+Svelte + DaisyUI
