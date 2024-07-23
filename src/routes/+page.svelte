@@ -1,3 +1,21 @@
-<h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import {
+		Button,
+		ThemeController
+	} from '$lib/components';
+
+	import '../index.css';
+
+	let theme = 'cupcake';
+</script>
+
+<div
+	data-theme={theme}
+	class="w-full h-screen flex items-center justify-center">
+	<Button on:click={() => console.log('clicked')}>
+		click me</Button>
+
+	<ThemeController
+		on:change={(value) =>
+			(theme = value?.target?.value)} />
+</div>
