@@ -1,21 +1,27 @@
 <script>
 	import {
 		Button,
-		ThemeController
+		ThemeController,
+		ThemeProvider
 	} from '$lib/components';
 
 	import '../index.css';
 
 	let theme = 'cupcake';
+	let checked = false;
+
+	$: theme = checked ? 'dark' : 'light';
 </script>
 
-<div
-	data-theme={theme}
-	class="w-full h-screen flex items-center justify-center">
-	<Button on:click={() => console.log('clicked')}>
-		click me</Button>
-
+<ThemeProvider
+	{theme}
+	classNames="flex justify-center items-center h-screen">
+	<Button on:click={() => console.log('clicked')}
+		>click me</Button>
 	<ThemeController
-		on:change={(value) =>
-			(theme = value?.target?.value)} />
-</div>
+		{checked}
+		on:change={(e) => {
+			console.log(e.checked);
+			checked = e.target.checked;
+		}} />
+</ThemeProvider>

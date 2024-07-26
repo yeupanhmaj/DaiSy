@@ -1,5 +1,9 @@
+<script>
+	export let checked;
+</script>
+
 <input
 	type="checkbox"
-	value="synthwave"
+	{checked}
 	class="toggle theme-controller"
 	on:change />
