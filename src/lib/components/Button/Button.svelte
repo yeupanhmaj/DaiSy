@@ -1,7 +1,60 @@
 <script>
-    
+	import clsx from 'clsx';
+	import { Skeleton } from '../Skeleton/index.js';
+
+	/**
+	 * The color variant of the button.
+	 *
+	 * @type {'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'link'}
+	 * @default 'primary'
+	 */
+	export let variant = 'primary';
+
+	/**
+	 * The size of the button.
+	 *
+	 * @type {'xs' | 'sm' | 'lg'}
+	 * @default 'sm'
+	 */
+	export let size = 'sm';
+
+	/**
+	 * If `true`, the button will be disabled.
+	 *
+	 * @type {boolean}
+	 * @default false
+	 * */
+	export let disabled = false;
+
+	/**
+	 * If `true`, the button will be in a loading state.
+	 *
+	 * @type {boolean}
+	 * @default false
+	 * */
+	export let skeleton = false;
+
+	$: buttonProps = {
+		class: clsx(
+			'btn',
+			variant ? `btn-${variant}` : '',
+			size ? `btn-${size}` : ''
+		),
+		disabled: disabled
+	};
+
+	$: skeletonProps = {
+		width: 77,
+		height: 32
+	};
 </script>
 
-<button class="btn btn-sm btn-primary" on:click>
-    <slot></slot>
-</button>
+{#if skeleton}
+	<Skeleton {...skeletonProps} />
+{/if}
+
+{#if !skeleton}
+	<button {...buttonProps} on:click>
+		<slot></slot>
+	</button>
+{/if}

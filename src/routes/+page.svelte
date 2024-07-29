@@ -17,11 +17,10 @@
 	{theme}
 	classNames="flex justify-center items-center h-screen">
 	<Button on:click={() => console.log('clicked')}
-		>click me</Button>
+		skeleton={true}>click me</Button>
 	<ThemeController
 		{checked}
 		on:change={(e) => {
-			console.log(e.checked);
 			checked = e.target.checked;
 		}} />
 </ThemeProvider>
