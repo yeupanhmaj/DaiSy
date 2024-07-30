@@ -34,12 +34,16 @@
 	 * */
 	export let skeleton = false;
 
+	$: sizeString =
+		size === 'xs'
+			? 'btn-xs'
+			: size === 'sm'
+				? 'btn-sm'
+				: 'btn-lg';
+
 	$: buttonProps = {
-		class: clsx(
-			'btn',
-			variant ? `btn-${variant}` : '',
-			size ? `btn-${size}` : ''
-		),
+		class: clsx('btn', sizeString),
+
 		disabled: disabled
 	};
 
@@ -50,7 +54,10 @@
 </script>
 
 {#if skeleton}
-	<Skeleton {...skeletonProps} />
+	<Skeleton
+		width={77}
+		height={32}
+		{...skeletonProps} />
 {/if}
 
 {#if !skeleton}
