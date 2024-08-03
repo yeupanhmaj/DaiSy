@@ -1,10 +1,14 @@
 <script>
 	import {
-		Button,
 		ThemeController,
 		ThemeProvider,
 		Skeleton
 	} from '$lib/components';
+
+	import Button from '$lib/components/Button/Button.svelte';
+	import Grid from '$lib/components/Grid/Grid.svelte';
+	import GridCol from '$lib/components/GridCol/GridCol.svelte';
+	import clsx from 'clsx';
 
 	import '../index.css';
 
@@ -17,13 +21,11 @@
 <ThemeProvider
 	{theme}
 	classNames="flex justify-center items-center h-screen">
-	<Button
-		glass
-		on:click={() => console.log('clicked')}
-		size="sm">click me</Button>
-	<ThemeController
-		{checked}
-		on:change={(e) => {
-			checked = e.target.checked;
-		}} />
+	<Grid classes="p-1">
+		<GridCol classes="bg-primary"
+			><Button>Button</Button></GridCol>
+		<GridCol classes="bg-secondary"></GridCol>
+		<GridCol classes="bg-accent"></GridCol>
+		<GridCol classes="bg-info"></GridCol>
+	</Grid>
 </ThemeProvider>
