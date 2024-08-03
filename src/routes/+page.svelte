@@ -18,6 +18,7 @@
 	{theme}
 	classNames="flex justify-center items-center h-screen">
 	<Button
+		glass
 		on:click={() => console.log('clicked')}
 		size="sm">click me</Button>
 	<ThemeController
