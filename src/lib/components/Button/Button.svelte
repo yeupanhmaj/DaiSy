@@ -1,6 +1,9 @@
 <script>
 	import clsx from 'clsx';
-	import { Skeleton } from '../Skeleton/index.js';
+	import {
+		getSizeClass,
+		getVariantClass
+	} from './ButtonUtils.js';
 
 	/**
 	 * The color variant of the button.
@@ -27,34 +30,38 @@
 	export let disabled = false;
 
 	/**
-	 * If `true`, the button will be in a loading state.
+	 * If `true`, the button will have a glass effect.
 	 *
 	 * @type {boolean}
 	 * @default false
 	 * */
-	export let skeleton = false;
+	export let glassEffect = false;
+
+	/**
+	 * If `true`, the button will be loading. Loading spinner will be displayed before the button content.
+	 *
+	 * @type {boolean}
+	 * @default false
+	 * */
+	export let loading = false;
+
+	$: console.log(size);
 
 	$: buttonProps = {
 		class: clsx(
 			'btn',
-			variant ? `btn-${variant}` : '',
-			size ? `btn-${size}` : ''
+			getSizeClass(size),
+			getVariantClass(variant),
+			glassEffect ? 'glass' : ''
 		),
-		disabled: disabled
-	};
 
-	$: skeletonProps = {
-		width: 77,
-		height: 32
+		disabled: disabled
 	};
 </script>
 
-{#if skeleton}
-	<Skeleton {...skeletonProps} />
-{/if}
-
-{#if !skeleton}
-	<button {...buttonProps} on:click>
-		<slot></slot>
-	</button>
-{/if}
+<button {...buttonProps} on:click>
+	{#if loading}
+		<span class="loading loading-spinner" />
+	{/if}
+	<slot />
+</button>

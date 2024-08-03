@@ -1,10 +1,15 @@
 <script>
-	export let width = 32;
-	export let height = 32;
+	import clsx from 'clsx';
 
-	$: skeletonProps = {
-		class: `skeleton h-[${height}px] w-[${width}px]`
-	};
+	export let widthClass = 'w-full';
+
+	export let heightClass = 'h-4';
+
+	$: classNames = clsx(
+		'skeleton',
+		widthClass,
+		heightClass
+	);
 </script>
 
-<div {...skeletonProps} />
+<div class={classNames} />

@@ -2,7 +2,8 @@
 	import {
 		Button,
 		ThemeController,
-		ThemeProvider
+		ThemeProvider,
+		Skeleton
 	} from '$lib/components';
 
 	import '../index.css';
@@ -16,8 +17,10 @@
 <ThemeProvider
 	{theme}
 	classNames="flex justify-center items-center h-screen">
-	<Button on:click={() => console.log('clicked')}
-		skeleton={true}>click me</Button>
+	<Button
+		glass
+		on:click={() => console.log('clicked')}
+		size="sm">click me</Button>
 	<ThemeController
 		{checked}
 		on:change={(e) => {
