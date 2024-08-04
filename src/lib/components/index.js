@@ -6,3 +6,4 @@ export { ThemeProvider } from './ThemeProvider/index.js';
 export { Skeleton } from './Skeleton/index.js';
 export { Grid } from './Grid/index.js';
 export { GridCol } from './GridCol/index.js';
+export { Toggle } from './Toggle/index.js';
