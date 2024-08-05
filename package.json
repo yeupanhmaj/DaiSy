@@ -1,6 +1,10 @@
 {
-	"name": "daisysvelte",
-	"version": "0.0.1",
+	"name": "svelsy",
+	"version": "0.0.2-preview",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/yeupanhmaj/DaiSy"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
