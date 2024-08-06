@@ -11,11 +11,11 @@ border:1px;
 border-radius:5px;
 text-color: red">
 	You need to install TailwindCss and DaisyUI for
-	this library to worked
+	this library to work
 </div>
 
 <br/>
-After installed required tool, install library
+After install required tool, install library
 <br/>
 
 ```

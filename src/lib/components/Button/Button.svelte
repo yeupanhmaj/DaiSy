@@ -52,8 +52,6 @@
 	 * */
 	export let loading = false;
 
-	$: console.log(size);
-
 	$: buttonProps = {
 		class: clsx(
 			'btn',
