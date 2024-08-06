@@ -7,7 +7,7 @@
 		GridCol,
 		Grid,
 		Button
-	} from '$lib/components/index.js';
+	} from '$lib/index.js';
 
 	import '../index.css';
 
