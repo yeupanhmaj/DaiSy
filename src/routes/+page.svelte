@@ -1,18 +1,20 @@
 <script>
 	import {
 		Toggle,
-		ThemeController,
 		ThemeProvider,
-		Skeleton,
 		GridCol,
 		Grid,
-		Button
+		Button,
+		Checkbox,
+		TextBox
 	} from '$lib/index.js';
 
 	import '../index.css';
 
 	let theme = 'cupcake';
 	let checked = false;
+
+	let value = 'Hello';
 
 	$: theme = checked ? 'dark' : 'light';
 </script>
@@ -21,11 +23,18 @@
 	{theme}
 	classes="flex justify-center items-center h-screen">
 	<Grid classes="p-1">
-		<GridCol classes="bg-primary"
-			><Button>Button</Button></GridCol>
-		<GridCol classes="bg-secondary"
-			><Toggle bind:checked /></GridCol>
-		<GridCol classes="bg-accent"></GridCol>
-		<GridCol classes="bg-info"></GridCol>
+		<GridCol classes="flex flex-col gap-1">
+			Button: <Button
+				on:click={() => (checked = !checked)}
+				>Button</Button
+			></GridCol>
+		<GridCol classes="flex flex-col gap-1"
+			>Toggle: <Toggle bind:checked /></GridCol>
+		<GridCol classes="flex flex-col gap-1"
+			>Checkbox: <Checkbox
+				bind:checked /></GridCol>
+		<GridCol classes="flex flex-col gap-1"
+			>Textbox: {value}
+			<TextBox bind:value /></GridCol>
 	</Grid>
 </ThemeProvider>

@@ -12,7 +12,7 @@
 	/**
 	 * The columns of the grid.
 	 *
-	 * @type {2 | 4 | 8 | 12 | 16}
+	 * @type {2 | 4 | 8 | 12 }
 	 * @default 8
 	 */
 	export let columns = 8;
