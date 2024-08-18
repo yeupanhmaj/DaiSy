@@ -26,4 +26,3 @@ npm i svelsy
 Feel free to contribute or request new features or component here 👉
 <a href="https://github.com/yeupanhmaj/DaiSy/issues/new">Submit new issue</a>
 <br/>
-Contact: <a href="mailto:hoangnm120697@gmail.com">hoangnm120697@gmail.com</a> 
