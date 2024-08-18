@@ -1,12 +1,11 @@
-export const gridCols = {
+const gridCols = {
 	2: 'grid-cols-2',
 	4: 'grid-cols-4',
 	8: 'grid-cols-8',
-	12: 'grid-cols-12',
-	16: 'grid-cols-16'
+	12: 'grid-cols-12'
 };
 
-export const gridGap = {
+const gridGap = {
 	0: 'gap-0',
 	1: 'gap-1',
 	2: 'gap-2',
