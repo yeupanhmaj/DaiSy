@@ -6,13 +6,10 @@
 
 	export let size = 'sm';
 
-	export let classes = '';
-
 	$: checkboxProps = {
 		class: clsx(
 			'checkbox',
-			getCheckboxClass('primary', size),
-			classes
+			getCheckboxClass('primary', size)
 		)
 	};
 </script>

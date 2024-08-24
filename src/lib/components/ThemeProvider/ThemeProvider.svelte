@@ -8,15 +8,8 @@
 	 * */
 	export let theme = 'light';
 
-	/**
-	 * The theme provider custom classes.
-	 * @type {string}
-	 * @default ''
-	 * */
-	export let classes = '';
-
 	$: themProviderProps = {
-		class: clsx('t', classes)
+		class: clsx('t')
 	};
 </script>
 
