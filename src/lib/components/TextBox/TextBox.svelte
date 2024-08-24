@@ -2,13 +2,6 @@
 	import clsx from 'clsx';
 
 	/**
-	 * The textbox custom classes.
-	 * @type {string}
-	 * @default ''
-	 * */
-	export let classes = '';
-
-	/**
 	 * The placeholder of the textbox.
 	 *
 	 * @type {string}
@@ -26,8 +19,7 @@
 
 	$: textBoxProps = {
 		class: clsx(
-			'input input-bordered w-full max-w-xs',
-			classes
+			'input input-bordered w-full max-w-xs'
 		),
 		placeholder
 	};

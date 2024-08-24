@@ -6,13 +6,6 @@
 	} from './ButtonUtils.js';
 
 	/**
-	 * The button custom classes.
-	 * @type {string}
-	 * @default ''
-	 * */
-	export let classes = '';
-
-	/**
 	 * The color variant of the button.
 	 *
 	 * @type {'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'link'}
@@ -57,8 +50,7 @@
 			'btn',
 			getSizeClass(size),
 			getVariantClass(variant),
-			glassEffect ? 'glass' : '',
-			classes
+			glassEffect ? 'glass' : ''
 		),
 
 		disabled: disabled

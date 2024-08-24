@@ -3,13 +3,6 @@
 	import { getGridClass } from './GridUtils.js';
 
 	/**
-	 * The grid custom classes.
-	 * @type {string}
-	 * @default ''
-	 * */
-	export let classes = '';
-
-	/**
 	 * The columns of the grid.
 	 *
 	 * @type {2 | 4 | 8 | 12 }
@@ -28,8 +21,7 @@
 	$: gridProps = {
 		class: clsx(
 			'grid w-full',
-			getGridClass(columns, gap),
-			classes
+			getGridClass(columns, gap)
 		)
 	};
 </script>

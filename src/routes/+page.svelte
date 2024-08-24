@@ -19,21 +19,19 @@
 	$: theme = checked ? 'dark' : 'light';
 </script>
 
-<ThemeProvider
-	{theme}
-	classes="flex justify-center items-center h-screen">
-	<Grid classes="p-1">
-		<GridCol classes="flex flex-col gap-1">
+<ThemeProvider {theme}>
+	<Grid>
+		<GridCol>
 			Button: <Button
 				on:click={() => (checked = !checked)}
 				>Button</Button
 			></GridCol>
-		<GridCol classes="flex flex-col gap-1"
+		<GridCol
 			>Toggle: <Toggle bind:checked /></GridCol>
-		<GridCol classes="flex flex-col gap-1"
+		<GridCol
 			>Checkbox: <Checkbox
 				bind:checked /></GridCol>
-		<GridCol classes="flex flex-col gap-1"
+		<GridCol
 			>Textbox: {value}
 			<TextBox bind:value /></GridCol>
 	</Grid>

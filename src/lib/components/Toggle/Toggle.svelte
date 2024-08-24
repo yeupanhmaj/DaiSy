@@ -2,13 +2,6 @@
 	import clsx from 'clsx';
 
 	/**
-	 * The toggle custom classes.
-	 * @type {string}
-	 * @default ''
-	 * */
-	export let classes = '';
-
-	/**
 	 * The checked state of the toggle.
 	 *
 	 * @type {boolean}
@@ -17,7 +10,7 @@
 	export let checked = false;
 
 	$: toggleProps = {
-		class: clsx('toggle', classes)
+		class: clsx('toggle')
 	};
 </script>
 
